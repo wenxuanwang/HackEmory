@@ -15,7 +15,7 @@ class PicItem(object):
 		self.title = title
 		self.descrip = descrip or ""
 		self.ext = ext
-		self.timestamp = datetime.strptime("%Y-%m-%d %H:%M", timestamp)
+		self.timestamp = datetime.strptime(timestamp, "%Y-%m-%d %H:%M")
 		self.src = hex(abs(hash(str(self.pid) + "#" + self.title)))[2:]
 
 @app.route('/')
