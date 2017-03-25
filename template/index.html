@@ -53,7 +53,21 @@
   </div>
 </div>
 <div class="wrapper">
-  <div class="intro"></div>
+
+
+  <div id="menu" class="menu">
+    <p style="font-size: 150%; color: #FFFFFF">Picture Upload</p>
+    <ul id="tiny">
+      <li class="active" style="color:#FFFFFF">
+          <input type="file" id="myFile">
+      </li>
+      <li class="active" style="color:#FFFFFF">
+          <button onclick="myFunction()">Upload</button>
+      </li>      
+    </ul>
+  </div>
+
+
   <div class="blog-wrap">
     <div class="blog-grid">
       <div class="post format-image box">
@@ -65,7 +79,7 @@
         <div class="frame"> <a href="post.html"> <img src="style/images/art/post1.jpg" alt=""> </a> </div>
         <h2 class="title"><a href="post.html">Morning Glory</a></h2>
         <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of autumn which I enjoy with my whole heart.</p>
-      </div>
+      </div>  
       <div class="post format-image box">
         <div class="frame"> <a href="post.html"> <img src="style/images/art/post1.jpg" alt=""> </a> </div>
         <h2 class="title"><a href="post.html">Morning Glory</a></h2>
@@ -93,10 +107,6 @@
     <li><a class="rss" href="#"></a></li>
     <li><a class="facebook" href="#"></a></li>
     <li><a class="twitter" href="#"></a></li>
-    <li><a class="pinterest" href="#"></a></li>
-    <li><a class="dribbble" href="#"></a></li>
-    <li><a class="flickr" href="#"></a></li>
-    <li><a class="linkedin" href="#"></a></li>
   </ul>
 </div>
 <div class="footer-wrapper">
@@ -120,5 +130,13 @@
   <div class="site-generator">HackEmory</div>
 </div>
 <script src="style/js/scripts.js"></script>
+<script>
+function myFunction() {
+    var x = document.getElementById("myFile");
+    todo: send to Database
+    x.disabled = true;
+}
+</script>
+
 </body>
 </html>
