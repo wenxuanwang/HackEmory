@@ -1525,22 +1525,12 @@ ul.flickr-feed li img {
     margin: 0;
     padding: 15px 0 0 0;
 }
-
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+p{
+    color: #ffffff;
 }
-
-li {
-    float: left;
+h1,h2,h3{
+    color: #ffffff;
 }
-
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 16px;
-    text-decoration: none;
+ul li{
+    color: #ffffff;
 }
