@@ -8,6 +8,8 @@
 <link rel="stylesheet" type="text/css" href="style/css/media-queries.css">
 <link rel="stylesheet" type="text/css" href="style/js/player/mediaelementplayer.css">
 <link rel="stylesheet" type='text/css' href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,300italic,300,700,700italic|Open+Sans+Condensed:300,700'>
+<link rel="stylesheet" type="text/css" href='style/css/bootstrap.css' />
+<link rel="stylesheet" type="text/css" href='style/css/bootstrap.min.css' />
 <script src="style/js/jquery-1.7.2.min.js"></script>
 <script src="style/js/ddsmoothmenu.js"></script>
 <script src="style/js/retina.js"></script>
@@ -55,14 +57,17 @@
 <div class="wrapper">
 
 
-  <div id="menu" class="menu">
+  <div id="menu" class="row">
     <p style="font-size: 150%; color: #FFFFFF">Picture Upload</p>
-    <ul id="tiny">
+    <ul>
       <li class="active" style="color:#FFFFFF">
-          <input type="file" id="myFile">
+          <label class="btn btn-primary" for="my-file-selector">
+            <input id="my-file-selector" type="file" style="display:none;">
+            Choose File
+          </label>
       </li>
-      <li class="active" style="color:#FFFFFF">
-          <button onclick="myFunction()">Upload</button>
+      <li class="active">
+          <button class="btn btn-success" onclick="myFunction()">Upload</button>
       </li>      
     </ul>
   </div>
