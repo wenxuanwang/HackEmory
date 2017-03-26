@@ -1,4 +1,4 @@
-from flask import Flask, url_for, render_template, request
+from flask import Flask, url_for, render_template, request, redirect
 from werkzeug.utils import secure_filename
 from collections import OrderedDict
 import sqlite3
@@ -59,6 +59,8 @@ def index():
 @app.route('/post/<pid>', methods=['GET', 'POST'])
 def showPost(pid):
 	if request.method == "POST":
+		if 'delete' in request.form:
+			return redirect('/delete/' + pid)
 		tag = request.form['newTag']
 		if tag:
 			postdb.execute('insert into tags values (?, ?)', [pid, tag])
@@ -70,12 +72,17 @@ def showPost(pid):
 		tags = []
 	return render_template('post.html', pic=post, tags=tags)
 
-
 @app.route('/tag/<tag>')
 def showTag(tag):
 	posts = _fetch_items(postdb.execute("select * from picitem where pid in (select distinct(pid) from tags where tag=?)", [tag]).fetchall())
 	return render_template('index.html', posts=posts.values(), main=False)
 
+@app.route('/delete/<pid>')
+def do_delete(pid):
+	postdb.execute("delete from picitem where pid = ?", [pid])
+	postdb.execute("delete from tags where pid = ?", [pid])
+	postconn.commit()
+	return redirect("/")
 
 if __name__ == '__main__':
 	app.run()
