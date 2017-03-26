@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>Geek Notebook</title>
+<title>Geeks' Notebook</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <link rel="stylesheet" type="text/css" href="/static/style/css/style.css" media="all">
@@ -27,7 +27,7 @@
 <div class="scanlines"></div>
 <div class="header-wrapper opacity">
   <div class="header">
-    <div class="logo"> <a href="index.html"> <p style="font-size: 200%; color:#FFFFFF">Geek Notebook</p> </a> </div>
+    <div class="logo"> <a href="/"> <p style="font-size: 200%; color:#FFFFFF">Geeks' Notebook</p> </a> </div>
     <div id="menu-wrapper">
       <div id="menu" class="menu">
         <ul id="tiny">
@@ -66,50 +66,26 @@
     <div class="blog-grid">
       {% for post in posts %}
       <div class="post format-image box">
-        <div class="frame"> 
-          <a href="#"> <img src="/static/images/{{post.src}}.{{post.ext}}" alt=""> </a> 
+        <div class="frame" style="background-image: url(/static/images/{{post.src}}.{{post.ext}});background-size: cover;"> 
+          <a href="{{post.url}}"> 
+            <img src="/static/images/blank.png" alt=""/>
+          </a> 
         </div>
-        <h2 class="title"><a href="#">{{post.title}}</a></h2>
+        <h2 class="title"><a href="{{post.url}}">{{post.title}}</a></h2>
         <p>{{post.descrip}}</p>
       </div>
       {% endfor %}
     </div>
   </div>
-  <div id="navigation">
-    <div class="nav-previous"><a href="#" ><span class="meta-nav-prev">&larr; Older posts</span></a></div>
-  </div>
-  <br>
-  <ul class="social">
-    <li><a class="rss" href="#"></a></li>
-    <li><a class="facebook" href="#"></a></li>
-    <li><a class="twitter" href="#"></a></li>
-  </ul>
-</div>
-<div class="footer-wrapper">
-  <div id="footer" class="four">
-    <div id="first" class="widget-area">
-      <div class="widget widget_archive">
-        <h3 class="widget-title">Archives</h3>
-        <ul>
-          <li><a href="#">to be done</a> (6)</li>
-          <li><a href="#">to be done</a> (2)</li>
-          <li><a href="#">to be done</a> (2)</li>
-          <li><a href="#">to be done</a> (4)</li>
-          <li><a href="#">to be done</a> (3)</li>
-          <li><a href="#">to be done</a> (1)</li>
-        </ul>
-      </div>
-    </div>  
-  </div>
 </div>
 <div class="site-generator-wrapper">
-  <div class="site-generator">HackEmory</div>
+  <div class="site-generator">Copyright Geeks' Notebook 2017. All rights reserved.
 </div>
 <script src="/static/style/js/scripts.js"></script>
 <script>
 function myFunction() {
     var x = document.getElementById("myFile");
-    todo: send to Database
+    //todo: send to Database
     x.disabled = true;
 }
 </script>

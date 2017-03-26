@@ -23,6 +23,8 @@ $(window).load(function(){
                 }
 
                 $('.post').width(box_width);
+                // $('.frame').height(box_width/4*3);
+                // $('.size-holder').height(box_width/4*3);
 
                 return box_width;
               }
