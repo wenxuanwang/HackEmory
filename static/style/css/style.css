@@ -1525,3 +1525,15 @@ ul.flickr-feed li img {
     margin: 0;
     padding: 15px 0 0 0;
 }
+p{
+    color: #ffffff;
+}
+h1,h2,h3{
+    color: #ffffff;
+}
+ul li{
+    color: #ffffff;
+}
+.ele1 {
+    float: left;
+}

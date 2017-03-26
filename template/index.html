@@ -8,17 +8,19 @@
 <link rel="stylesheet" type="text/css" href="style/css/media-queries.css">
 <link rel="stylesheet" type="text/css" href="style/js/player/mediaelementplayer.css">
 <link rel="stylesheet" type='text/css' href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,300italic,300,700,700italic|Open+Sans+Condensed:300,700'>
-<script src="/static/style/js/jquery-1.7.2.min.js"></script>
-<script src="/static/style/js/ddsmoothmenu.js"></script>
-<script src="/static/style/js/retina.js"></script>
-<script src="/static/style/js/selectnav.js"></script>
-<script src="/static/style/js/jquery.masonry.min.js"></script>
-<script src="/static/style/js/jquery.fitvids.js"></script>
-<script src="/static/style/js/jquery.backstretch.min.js"></script>
-<script src="/static/style/js/mediaelement.min.js"></script>
-<script src="/static/style/js/mediaelementplayer.min.js"></script>
-<script src="/static/style/js/jquery.dcflickr.1.0.js"></script>
-<script src="/static/style/js/twitter.min.js"></script>
+<link rel="stylesheet" type="text/css" href='style/css/bootstrap.css' />
+<link rel="stylesheet" type="text/css" href='style/css/bootstrap.min.css' />
+<script src="style/js/jquery-1.7.2.min.js"></script>
+<script src="style/js/ddsmoothmenu.js"></script>
+<script src="style/js/retina.js"></script>
+<script src="style/js/selectnav.js"></script>
+<script src="style/js/jquery.masonry.min.js"></script>
+<script src="style/js/jquery.fitvids.js"></script>
+<script src="style/js/jquery.backstretch.min.js"></script>
+<script src="style/js/mediaelement.min.js"></script>
+<script src="style/js/mediaelementplayer.min.js"></script>
+<script src="style/js/jquery.dcflickr.1.0.js"></script>
+<script src="style/js/twitter.min.js"></script>
 </head>
 
 <body>
@@ -29,22 +31,12 @@
     <div id="menu-wrapper">
       <div id="menu" class="menu">
         <ul id="tiny">
-          <li class="active"><a href="index.html">todo1</a>
+          <li class="active"><a href="index.html">Photo</a>
             <ul>
               <li><a href="post.html">Post</a></li>
             </ul>
           </li>
-          <li><a href="page-with-sidebar.html">todo2</a>
-            <ul>
-              <li><a href="page-with-sidebar.html">Page With Sidebar</a></li>
-              <li><a href="full-width.html">Full Width</a></li>
-            </ul>
-          </li>
-          <li><a href="typography.html">todo3</a>
-            <ul>
-              <li><a href="typography.html">Typography</a></li>
-              <li><a href="columns.html">Columns</a></li>
-            </ul>
+          <li><a href="todo.html">Todo List</a>
           </li>
         </ul>
       </div>
@@ -54,34 +46,36 @@
 </div>
 <div class="wrapper">
 
-
-  <div id="menu" class="menu">
+  <div id="menu" class="row">
     <p style="font-size: 150%; color: #FFFFFF">Picture Upload</p>
-    <ul id="tiny">
-      <li class="active" style="color:#FFFFFF">
-          <input type="file" id="myFile">
+    <ul style="list-style-type: none; margin: 0; padding: 0;overflow: hidden;">
+      <li class="active" style="color:#FFFFFF; float: left;">
+          <label class="btn btn-primary" for="my-file-selector">
+            <input id="my-file-selector" type="file" style="display:none;">
+            Choose File
+          </label>
       </li>
-      <li class="active" style="color:#FFFFFF">
-          <button onclick="myFunction()">Upload</button>
+      <li class="active" style="float: left;">
+          <button class="btn btn-success" onclick="myFunction()">Upload</button>
       </li>      
     </ul>
   </div>
-
+  <br>
 
   <div class="blog-wrap">
     <div class="blog-grid">
       <div class="post format-image box">
-        <div class="frame"> <a href="post.html"> <img src="/static/style/images/art/post1.jpg" alt=""> </a> </div>
+        <div class="frame"> <a href="post.html"> <img src="style/images/art/post1.jpg" alt=""> </a> </div>
         <h2 class="title"><a href="post.html">Morning Glory</a></h2>
         <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of autumn which I enjoy with my whole heart.</p>
       </div>
       <div class="post format-image box">
-        <div class="frame"> <a href="post.html"> <img src="/static/style/images/art/post1.jpg" alt=""> </a> </div>
+        <div class="frame"> <a href="post.html"> <img src="style/images/art/post1.jpg" alt=""> </a> </div>
         <h2 class="title"><a href="post.html">Morning Glory</a></h2>
         <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of autumn which I enjoy with my whole heart.</p>
       </div>  
       <div class="post format-image box">
-        <div class="frame"> <a href="post.html"> <img src="/static/style/images/art/post1.jpg" alt=""> </a> </div>
+        <div class="frame"> <a href="post.html"> <img src="style/images/art/post1.jpg" alt=""> </a> </div>
         <h2 class="title"><a href="post.html">Morning Glory</a></h2>
         <p>Then I feel the presence of the Almighty, who formed us in his own image, and the breath of that universal love which bears and sustains us, as it floats around us in an eternity of bliss; and then, my friend, when darkness overspreads my eyes, and heaven and earth seem to dwell in my soul and absorb its power, like the form of a beloved mistress, then I often think with longing, Oh, would I could describe these conceptions, could impress upon paper all that is living so full and warm within me, that it might be the mirror of my soul, as my soul is the mirror of the infinite God!</p>
       </div>
@@ -127,9 +121,9 @@
   </div>
 </div>
 <div class="site-generator-wrapper">
-  <div class="site-generator">HackEmory</div>
+  <div class="site-generator"><p style="color:#ffffff;">HackEmory</p></div>
 </div>
-<script src="/static/style/js/scripts.js"></script>
+<script src="style/js/scripts.js"></script>
 <script>
 function myFunction() {
     var x = document.getElementById("myFile");
