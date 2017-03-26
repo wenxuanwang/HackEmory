@@ -28,19 +28,6 @@
 <div class="header-wrapper opacity">
   <div class="header">
     <div class="logo"> <a href="/"> <p style="font-size: 200%; color:#FFFFFF">Geeks' Notebook</p> </a> </div>
-    <div id="menu-wrapper">
-      <div id="menu" class="menu">
-        <ul id="tiny">
-          <li class="active"><a href="index.html">Photo</a>
-            <ul>
-              <li><a href="post.html">Post</a></li>
-            </ul>
-          </li>
-          <li><a href="todo.html">Todo List</a>
-          </li>
-        </ul>
-      </div>
-    </div>
     <div class="clear"></div>
   </div>
 </div>
@@ -63,27 +50,29 @@
       </div>
       {% endfor %}
       <div id="menu" class="post box">
-        <p style="font-size: 150%; color: #FFFFFF">Picture Upload</p>
-        <ul style="list-style-type: none;">
-          <div class="form-group">
-            <label for="title" style="color:#ffffff;">Title:</label>
-            <input type="text" class="form-control" id="titile" style="background-color: #ffffff;">
-          </div>
-          <div class="form-group">
-            <label for="description" style="color:#ffffff;">Description:</label>
-            <textarea class="form-control" rows="3" id="description" style="background-color: #ffffff;"></textarea>
-          </div>
-        </ul>
-        <ul style="list-style-type: none; margin: 0; padding: 0;overflow: hidden;">
-          <li class="active" style="color:#FFFFFF; float: left;">
-              <label class="btn btn-primary" for="my-file-selector">
-                <input id="my-file-selector" type="file" style="display:none;">
-                Choose File
-              </label>
-          </li>
-          <li class="active" style="float: left;">
-              <button class="btn btn-success" onclick="myFunction()">Upload</button>
-          </li>  
+        <p style="font-size: 150%; color: #FFFFFF">Picture Upload</p>'
+        <form method="post" enctype="multipart/form-data">
+          <ul style="list-style-type: none;">
+            <div class="form-group">
+              <label for="title" style="color:#ffffff;">Title:</label>
+              <input type="text" class="form-control" id="title" name="title" style="background-color: #ffffff;">
+            </div>
+            <div class="form-group">
+              <label for="description" style="color:#ffffff;">Description:</label>
+              <textarea class="form-control" rows="3" id="description" style="background-color: #ffffff;" name="descrip"></textarea>
+            </div>
+          </ul>
+          <ul style="list-style-type: none; margin: 0; padding: 0;overflow: hidden;">
+            <li class="active" style="color:#FFFFFF; float: left;">
+                <label class="btn btn-primary" for="my-file-selector">
+                  <input id="my-file-selector" type="file" style="display:none;" name="file">
+                  Choose File
+                </label>
+            </li>
+            <li class="active" style="float: left;">
+                <input type="submit" value="Post">
+            </li>  
+          </form>
         </ul>
         <br/>  
       </div>
