@@ -49,9 +49,12 @@
       <p>{{pic.descrip}}</p>
       <div class="tags">
         {% for tag in tags %}
-        <a href="#">{{tag}}</a> 
+        <a href="/tag/{{tag}}">{{tag}}</a> 
         {% endfor %}
       </div>
+      <form class="searchform" method="post">
+        <input type="text" name="newTag" value="type new tag and hit enter" onFocus="this.value=''" onBlur="this.value='type new tag and hit enter'"/>
+      </form>
     </div>
   </div>
   <div class="sidebar box">

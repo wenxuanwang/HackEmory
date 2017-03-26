@@ -25,8 +25,10 @@ class PicItem(object):
 		except:
 			self.url = ""
 
-def _fetch_items():
-	return OrderedDict(sorted([(int(each[0]), PicItem(*each)) for each in postdb.execute("select * from picitem").fetchall()], 
+def _fetch_items(lists=None):
+	if not lists:
+		lists =  postdb.execute("select * from picitem").fetchall()
+	return OrderedDict(sorted([(int(each[0]), PicItem(*each)) for each in lists], 
 					key=lambda x: x[1].timestamp))
 _posts = _fetch_items()
 
@@ -52,19 +54,29 @@ def index():
 				postconn.commit()
 	global _posts
 	_posts = _fetch_items()
-	return render_template('index.html', posts=_posts.values())
+	return render_template('index.html', posts=_posts.values(), main=True)
 
-@app.route('/post/<pid>')
+@app.route('/post/<pid>', methods=['GET', 'POST'])
 def showPost(pid):
+	if request.method == "POST":
+		tag = request.form['newTag']
+		if tag:
+			postdb.execute('insert into tags values (?, ?)', [pid, tag])
+			postconn.commit()
 	post = _posts[int(pid)]
 	try:
-		tags = zip(*postdb.execute("select tag from tags where pid=?", [pid]).fetchall())[0]
+		tags = zip(*postdb.execute("select distinct(tag) from tags where pid=?", [pid]).fetchall())[0]
 	except:
 		tags = []
 	return render_template('post.html', pic=post, tags=tags)
 
+
+@app.route('/tag/<tag>')
+def showTag(tag):
+	posts = _fetch_items(postdb.execute("select * from picitem where pid in (select distinct(pid) from tags where tag=?)", [tag]).fetchall())
+	return render_template('index.html', posts=posts.values(), main=False)
+
+
 if __name__ == '__main__':
 	app.run()
 	SAVE_PATH = os.path.abspath("static\\images")
-
-

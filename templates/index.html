@@ -49,6 +49,7 @@
         <p>{{post.descrip}}</p>
       </div>
       {% endfor %}
+      {% if main %}
       <div id="menu" class="post box">
         <p style="font-size: 150%; color: #FFFFFF">Picture Upload</p>'
         <form method="post" enctype="multipart/form-data">
@@ -76,6 +77,7 @@
         </ul>
         <br/>  
       </div>
+      {% endif %}
     </div>
   </div>
 </div>
