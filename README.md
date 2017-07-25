@@ -1,5 +1,7 @@
 # Geeks' Notebook
 ---
+# Update: Nuke everything, transform to new product
+
 **HOW TO RUN**
 There's an example of the running script, but... in the format of `bat`
 Running on `unix` machines may need some change, but... we ran out of time :)
